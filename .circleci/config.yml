@@ -15,7 +15,7 @@ jobs:
 #         command: sudo chmod +x ./gradlew
       - run:
           name: Download Dependencies
-          command: curl -s "https://get.sdkman.io" | bash && source "$HOME/.sdkman/bin/sdkman-init.sh" &&  sdk install gradle 7.6 && yes | sdkmanager --licenses 
+          command: curl -s "https://get.sdkman.io" | bash && source "$HOME/.sdkman/bin/sdkman-init.sh" &&  sdk install gradle 7.6 && yes | sdkmanager --licenses || echo "pass"
       - run:
           name: Download Dependencies
           command: gradle wrapper  && ./gradlew androidDependencies
